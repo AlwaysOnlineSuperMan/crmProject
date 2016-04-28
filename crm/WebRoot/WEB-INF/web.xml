@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+<!--
+
+  
+  	 
+	用spring已经预定义好的ContextLoaderListener，来读取spring的配置信息。
+	读取时机为 web工程启动的时候，所以用监听器较为合理。
+	
+	ContextLoaderListener 到什么位置去读取配置信息呢。
+	由其父类 定义的字符串”contextConfigLocation“为key 去上下文中读取 
+	 
+	-->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:bean_*.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<filter>
+  	<filter-name>EncodingFilter</filter-name>
+  	<filter-class>com.crm.filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>EncodingFilter</filter-name>
+  	<servlet-name>action</servlet-name>
+  </filter-mapping>
+  <filter>
+  	<filter-name>LoginFilter</filter-name>
+  	<filter-class>com.crm.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  <filter-name>LoginFilter</filter-name>
+  <url-pattern>/salChanceAction.do</url-pattern>
+   <url-pattern>/cstCustomerAction.do</url-pattern>
+  </filter-mapping>
+<servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
+

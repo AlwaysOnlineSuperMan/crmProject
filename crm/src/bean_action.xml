@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean name="/salChanceAction" class="com.crm.action.SalChanceAction">
+		<property name="salChanceService" ref="salChanceService"></property>
+		<property name="sysUserService" ref="sysUserService"></property>
+	</bean>
+	
+	<bean name="/salPlanAction" class="com.crm.action.SalPlanAction">
+		<property name="salPlanService" ref="salPlanService"></property>
+		<property name="salChanceService" ref="salChanceService"></property>
+	</bean>
+	<bean name="/sysUserAction" class="com.crm.action.SysUserAction">
+		<property name="sysUserService" ref="sysUserService"></property>
+		<property name="sysRoleService" ref="sysRoleService"></property>
+	</bean>
+	<bean name="/sysRoleAction" class="com.crm.action.SysRoleAction">
+		<property name="sysRoleService" ref="sysRoleService"></property>
+	</bean>
+	<bean name="/cstCustomerAction" class="com.crm.action.CstCustomerAction">
+		<property name="cstCustomerService" ref="cstCustomerService"></property>
+		<property name="salChanceService" ref="salChanceService" ></property>
+		<property name="basDictService" ref="basDictService" ></property>
+		<property name="sysUserService" ref="sysUserService" ></property>
+	</bean>
+	<bean name="/cstLinkmanAction" class="com.crm.action.CstLinkmanAction">
+		<property name="cstLinkmanService" ref="cstLinkmanService"></property>
+		<property name="cstCustomerService" ref="cstCustomerService"></property>
+	</bean>
+	
+	
+	<bean name="/cstActivityAction" class="com.crm.action.CstActivityAction">
+		<property name="cstActivityService" ref="cstActivityService"></property>
+		<property name="cstCustomerService" ref="cstCustomerService"></property>
+	</bean>
+	
+	
+	<!-- 服务 -->
+	<bean name="/cstServiceAction" class="com.crm.action.CstServiceAction">
+		<property name="cstServiceService" ref="cstServiceService"></property>
+		<property name="cstCustomerService" ref="cstCustomerService"></property>
+		<property name="basDictService" ref="basDictService"></property>
+		<property name="sysUserService" ref="sysUserService"></property>
+	</bean>
+	<bean name="/ordersAction" class="com.crm.action.OrdersAction">
+		<property name="ordersService" ref="ordersService"></property>
+		
+	</bean>
+	<bean name="/ordersLineAction" class="com.crm.action.OrdersLineAction">
+		<property name="ordersLineService" ref="ordersLineService"></property>
+		<property name="ordersService" ref="ordersService"></property>
+		<property name="productService" ref="productService"></property>
+	</bean>
+	
+	<bean name="/basDictAction" class="com.crm.action.BasDictAction">
+		<property name="basDictService" ref="basDictService"></property>
+	</bean>
+	<bean name="/productAction" class="com.crm.action.ProductAction">
+		<property name="productService" ref="productService"></property>
+	</bean>
+	<bean name="/storageAction" class="com.crm.action.StorageAction">
+		<property name="storageService" ref="storageService"></property>
+		<property name="productService" ref="productService"></property>
+	</bean>
+	<bean name="/cstLostAction" class="com.crm.action.CstLostAction">
+		<property name="cstLostService" ref="cstLostService"></property>
+		<property name="cstCustomerService" ref="cstCustomerService"></property>
+	</bean>
+</beans>

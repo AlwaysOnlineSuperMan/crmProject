@@ -1,0 +1,190 @@
+数据库改动：
+	1,每一个表加一个xxx_update_datetime字段，作为乐观锁。
+	2,sys_user 表 加入urs_no字段.
+	3,每一个表都拥有主键（没的设置了一个主键）。
+	详细更改：
+
+--数据基础表
+update dbo.bas_dict set dict_update_datetime=GETDATE() 
+select * from dbo.bas_dict;
+--客户交往记录表
+update dbo.cst_activity set atv_update_datetime=GETDATE() 
+select * from dbo.cst_activity;
+--客户信息表
+update dbo.cst_customer set cust_update_datetime=GETDATE() 
+select * from dbo.cst_customer;
+--联系人表
+update dbo.cst_linkman set lkm_update_datetime=GETDATE() 
+select * from dbo.cst_linkman;
+--客服流失表
+update dbo.cst_lost set lst_update_datetime=GETDATE() 
+select * from dbo.cst_lost;
+--服务管理表
+update dbo.cst_service set svr_update_datetime=GETDATE() 
+select * from dbo.cst_service;
+--订单表
+update dbo.orders set odr_update_datetime=GETDATE() 
+select * from dbo.orders;
+--订单历史表
+update dbo.orders_line set odd_update_datetime=GETDATE() 
+select * from dbo.orders_line;
+
+--商品表
+update dbo.product set prod_update_datetime=GETDATE() 
+select * from dbo.product;
+
+--销售机会表
+update dbo.sal_chance set chc_update_datetime=GETDATE() 
+select * from dbo.sal_chance;
+
+--销售计划表
+update dbo.sal_plan set pla_update_datetime=GETDATE() 
+select * from dbo.sal_plan;
+
+--库存表
+update dbo.storage set stk_update_datetime=GETDATE() 
+select * from dbo.storage;
+
+--权利表
+update dbo.sys_right set right_update_datetime=GETDATE() 
+select * from dbo.sys_right;
+
+--权限表
+update sys_role set role_update_datetime=GETDATE() 
+select * from sys_role;
+
+--权限和权利表的中间表
+update dbo.sys_role_right set rf_update_datetime=GETDATE() 
+select * from dbo.sys_role_right;
+
+--管理者信息表
+update dbo.sys_user set usr_update_datetime=GETDATE() 
+select * from  dbo.sys_user;
+
+											
+========================================业务分析========================================											
+营销管理：											
+	"<1>销售机会管理：
+"										
+		操作者：	销售主管	客户经理							
+		涉及表：	sal_chance 销售机会表								
+		功能：									
+		    1.显示信息：只显示状态为“未分配”的，分页显示									
+		    2.查询：根据条件进行模糊查询（注意数据分页）									
+		    3.新建销售机会：对创建任何时间进行绑定，创建人只能是当前登录人，时间为当前时间，编号是自增的，此时的指派对象框和指派时间框是不可操作的。									
+		    4.指派：除指派人，指派时间（格式：YYYY-MM-dd）外，其他信息均为只读，不可操作，销售机会状态改为“已指派”。									
+		    5.修改：可以对机会来源、客户名称、成功机率、概要、联系人、联系人电话、机会描述进行编辑。此时的编号，指派对象框和指派时间框是不可操作的									
+		    6.删除：需要判断当前登录用户为该销售机会的创建人，否则不可删除。提示用户，是否确认删除，客户选择“是”才可进行删除									
+		    7.保存：提示“保存成功”，或报告相应错误。页面必填项未填时不允许提交表单，并更改数据库，跳转回显示全部页面。									
+											
+	"<2>客户开发计划：
+"										
+		操作者：	客户经理								
+		涉及表：	sal_chance 销售机会， sal_plan 销售计划								
+		功能：									
+		    1.显示信息：只显示状态为“已分配”的销售机会，分页显示									
+		    2.查询：根据条件进行模糊查询（注意数据分页）									
+		    3.制定开发计划：显示出销售机会的详细信息，也可编辑已经有的计划项（删除，修改），日期不可以编辑。提交并更新当前页面时在计划项列表中显示新建的计划项									
+		    4.执行计划：对每个计划项填写执行效果，并保存。									
+		    5.开发成功：需修改销售机会的状态为“开发成功”。并根据销售机会中相应信息自动创建客户记录（在cst_customer 客户表新增），跳转回显示全部页面。									
+		    6.终止开发：修改销售机会的状态为“开发失败”，跳转回显示全部页面。									
+		    7.保存：提示“保存成功”，或报告相应错误。页面必填项未填时不允许提交表单，并更改数据库，跳转回显示全部页面。									
+											
+客户管理：											
+	<1>客户信息管理：										
+		操作者：客户经理									
+		涉及表：cst_customer 客户表，cst_linkman 客户联系表，cst_activity 活动，orders 订单， product 产品									
+		功能：									
+		    1.显示信息：只显示状态为“已分配”的销售机会，分页显示，状态为2,3（1-警告，2-暂缓流失，3-已经流失）才可以删除按钮									
+		    2.查询：对客户等级，地区下拉框进行绑定，根据条件进行模糊查询（注意数据分页）									
+		    3.编辑客户信息：编辑状态为“正常”的客户信息，客户编号不可编辑，客户满意度和客户信用度候选项的值都是1~5。									
+		    4.管理客户联系人：									
+			显示对应的客户的编号和名称								
+			4.1新增联系人：要输入姓名、性别、职位和办公电话，必输（注意：联系人是属于某个客户的）保存成功跳转回联系人页面								
+			4.2编辑联系人：姓名、性别、职位和办公电话为必输项，保存成功跳转回联系人页面。								
+			4.3删除联系人：删除时提示用户是否删除，“是”则删除。								
+		    5.管理客户交往记录：									
+			显示对应的客户的编号和名称								
+			4.1新增交往记录：日期、地点、概要，必输（注意：交往记录是属于某个客户的）保存成功跳转回交往记录页面								
+			4.2编辑交往记录：日期、地点、概要，必输项，保存成功跳转回联系人页面。								
+			4.3删除交往记录：删除时提示用户是否删除，“是”则删除。								
+		    6.查看客户历史订单：查找订单状态为“已发货”或“已回款”的数据（对应订单记录状态为5或6）。									
+			6.1查看订单明细：对每个订单可以查看明细。在订单明细中需要显示订单的总金额。								
+		    7.删除客户信息：，状态为2,3（1-警告，2-暂缓流失，3-已经流失）才可以删除									
+	<2>客户流失管理：										
+		操作者：客户经理									
+		涉及表：cst_customer 开发成功的客户，cst_lost 失去的客户									
+		功能：									
+		    1.显示信息：超过6个月没有下单的客户（cst_lost 失去的客户表，状态为警告）									
+		    2.查询：对状态下拉框进行绑定，根据条件进行模糊查询（注意数据分页）									
+		    3.暂缓流失：暂缓措施可以不断追加，系统要保存每次追加的暂缓措施，该客户的状态修改为“暂缓流失”。跳转回流失客户页面									
+		    4.流失操作：确认客户流失时要填写客户流失的原因，该客户的状态修改为“已流失”。跳转回流失客户页面。									
+		    5.保存：提示“保存成功”，或报告相应错误。页面必填项未填时不允许提交表单，并更改数据库，跳转回流失客户页面。									
+											
+服务管理：											
+	<1>创建服务：										
+		操作者：客户经理									
+		涉及表：cst_service 服务表									
+		功能：									
+		1.添加服务：服务类型，概要，客户名称，服务请求需要输入，创建人和创建时间获取当前登录人，当前时间，状态默认为新创建，编号为自增。									
+		2.保存:提示“保存成功”，火报告相应错误。页面必填项未填时不允许提交表单，仍返回创建服务页面。									
+	<2>服务分配：										
+		操作者：销售主管									
+		涉及表：cst_service 服务表									
+		功能：									
+		   1.显示信息：状态为“新创建”的服务单据，需要绑定分配人员									
+		   2.查询：分别绑定服务类型和状态，根据条件进行模糊查询（注意数据分页）									
+		   3.删除：需要判断当前登录用户为该销售机会的创建人，否则不可删除。提示用户，是否确认删除，客户选择“是”才可进行删除									
+	<3>服务处理：										
+		操作者：客户经理									
+		涉及表：cst_service 服务表									
+		功能：									
+		   1.显示信息：查询得到状态为“已分配”的服务单据。									
+		   2.查询：分别绑定服务类型和状态，根据条件进行模糊查询（注意数据分页）									
+		   3.处理：添加处理方法。									
+	<4>服务处理：										
+		操作者：客户经理									
+		涉及表：cst_service 服务表									
+		功能：									
+		   1.显示信息：查询得到状态为“已分配”的服务单据。									
+		   2.查询：分别绑定服务类型和状态，根据条件进行模糊查询（注意数据分页）									
+		   3.反馈：添加反馈结果。									
+	<4>服务处理：										
+		操作者：客户经理，销售主管									
+		涉及表：cst_service 服务表									
+		功能：									
+		   1.显示信息：查询得到状态为“已分配”的服务单据。									
+		   2.查询：分别绑定服务类型和状态，根据条件进行模糊查询（注意数据分页）									
+		   3.查看详细信息：查看服务表的信息。									
+											
+统计报表：											
+	<1>客户贡献分析：										
+		   1.显示信息：对客户下单的总金额进行统计，了解客户对企业的贡献的信息显示。									
+		   2.查询：分别绑定年份，根据条件进行模糊查询（注意数据分页）									
+	<2>客户构成分析：										
+		   1.显示信息：了解某种类型的客户有多少及所占比例的信息显示。									
+		   2.查询：分别等级（字典表），根据条件进行模糊查询（注意数据分页）									
+	<3>客户服务分析：										
+		   1.显示信息：根据服务类型对服务进行统计的信息显示。									
+		   2.查询：分别绑定年份，根据条件进行模糊查询（注意数据分页）									
+	<4>客户流失分析：										
+		   1.显示信息：查看已经确认流失的客户流失记录的信息显示。									
+		   2.查询：分别客户名称，客户经理，根据条件进行模糊查询（注意数据分页）									
+											
+基础数据：											
+	<1>数据字典管理：										
+--------------------------------------
+//宁思
+update dbo.sys_right set right_url='salChanceAction.do?method=salChanceaManageList' where right_text='销售机会管理'
+update dbo.sys_right set right_url='salPlanAction.do?method=planList' where right_text='客户开发计划'
+
+//杨泽通
+update dbo.sys_right set right_url='ordersAction.do?method=nameOrprice' where right_text='客户贡献分析';
+update dbo.sys_right set right_url='basDictAction.do?method=Beyong' where right_text='客户构成分析';
+update dbo.sys_right set right_url='~rept/ser.jsp' where right_text='客户服务分析';
+update dbo.sys_right set right_url='~rept/lost.jsp' where right_text='客户流失分析';
+
+
+//刘绍
+
+update dbo.sys_right set right_url='cstCustomerAction.do?method=listAll' where right_text='客户信息管理';

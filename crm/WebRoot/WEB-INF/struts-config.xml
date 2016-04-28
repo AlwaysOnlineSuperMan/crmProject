@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+  	<form-bean name="salChanceForm" type="com.crm.form.SalChanceForm"></form-bean>
+  	<form-bean name="salPlanForm" type="com.crm.form.SalPlanForm"></form-bean>
+  	<form-bean name="sysUserForm" type="com.crm.form.SysUserForm"></form-bean>
+  	<form-bean name="cstCustForm" type="com.crm.form.CstCustomerForm"></form-bean>
+  	<form-bean name="cstLinkmanForm" type="com.crm.form.CstLinkmanForm"></form-bean>
+  	<form-bean name="cstActivityForm" type="com.crm.form.CstActivityForm"></form-bean>
+  	<form-bean name="ordersForm" type="com.crm.form.OrdersForm"></form-bean>
+  	<form-bean name="ordersLineForm" type="com.crm.form.OrdersLineForm"></form-bean>
+  	<form-bean name="cstServiceForm" type="com.crm.form.CstServiceForm"></form-bean>
+  	<form-bean name="sysRoleForm" type="com.crm.form.SysRoleForm"></form-bean>
+  	<form-bean name="basDictForm" type="com.crm.form.BasDictForm"></form-bean>
+  	<form-bean name="productForm" type="com.crm.form.ProductForm"></form-bean>
+  	<form-bean name="storageForm" type="com.crm.form.StorageForm"></form-bean>
+  	<form-bean name="cstLostForm" type="com.crm.form.CstLostForm"></form-bean>
+  </form-beans>
+    <global-exceptions>
+    <!-- 自定义处理异常 -->
+  	<exception    
+  	key="" type="com.crm.util.AppException" handler="com.crm.util.AppExceptionHandler"	path="/error.jsp"></exception>
+  	 <!-- 系统异常处理 -->
+  	<exception key="system.error" type="java.lang.Exception" path="/error.jsp"  ></exception>
+  </global-exceptions>
+  <action-mappings >
+  <!--
+  		type="com.crm.action.SalChanceAction"
+  	-->
+  	<action path="/salPlanAction" name="salPlanForm" type="org.springframework.web.struts.DelegatingActionProxy" parameter="method" scope="request" >
+  		<forward name="dev_detail" path="/~sale/dev_detail.jsp"></forward>
+  		<forward name="dev_plan" path="/~sale/dev_plan.jsp"></forward>
+  		 <forward name="dev" path="/~sale/dev.jsp" redirect="false" ></forward>
+  		<forward name="dev_execute" path="/~sale/dev_execute.jsp"></forward>
+  		
+  	</action>
+  	<action path="/salChanceAction"	type="org.springframework.web.struts.DelegatingActionProxy" parameter="method" scope="request" name="salChanceForm">
+  	 <forward name="list" path="/~sale/list.jsp" redirect="false"></forward>
+  	 <forward name="add" path="/~sale/add.jsp"></forward>
+  	 <forward name="toEdit" path="/~sale/edit.jsp"></forward>
+  	 <forward name="toDispatch" path="/~sale/dispatch.jsp"></forward>
+  	 <forward name="dev" path="/~sale/dev.jsp" redirect="false" ></forward>
+  	 <forward name="dev_detail" path="/~sale/dev_detail.jsp"></forward>
+  	</action>
+  	<action path="/sysUserAction"	type="org.springframework.web.struts.DelegatingActionProxy" parameter="method" scope="request" name="sysUserForm">
+  	 <forward name="toLogin" path="/login.jsp"></forward>
+  	   <forward name="index" path="/index.jsp"></forward>
+  	   <forward name="toList" path="/~right/user/list.jsp"></forward>
+  	   <forward name="toUserAdd" path="/~right/user/add.jsp"></forward>
+  	   <forward name="toUserEdit" path="/~right/user/edit.jsp"></forward>
+  	   <forward name="toDetail" path="/~right/user/detail.jsp"></forward>
+  	   <forward name="toDispatch" path="/~right/user/dispatch.jsp"></forward>
+  	</action>
+  	
+    	<action path="/sysRoleAction"	type="org.springframework.web.struts.DelegatingActionProxy" parameter="method" scope="request" name="sysRoleForm">
+  			 <forward name="toRoleList" path="/~right/role/list.jsp"></forward>
+  			 <forward name="toRoleEdit" path="/~right/role/edit.jsp"></forward>
+  			 <forward name="toDispatchRight" path="/~right/role/dispatchRight.jsp"></forward>
+  			 <forward name="toDetail" path="/~right/role/detail.jsp"></forward>
+  	</action>
+  	<action path="/cstCustomerAction" type="org.springframework.web.struts.DelegatingActionProxy" parameter="method" scope="request" name="cstCustForm">
+  		 <forward name="all" path="/~cust/cust/list.jsp"></forward>
+  		  <forward name="edit" path="/~cust/cust/edit.jsp"></forward>
+  		  <forward name="toDispatch" path="/~sale/dispatch.jsp"></forward>
+  	</action>
+  	 <action path="/cstLinkmanAction" type="org.springframework.web.struts.DelegatingActionProxy" parameter="method" scope="request" name="cstLinkmanForm">
+  		 <forward name="list" path="/~cust/cust/linkman.jsp" ></forward>
+  		 <forward name="edit" path="/~cust/cust/linkman_edit.jsp" ></forward>
+  		 <forward name="new" path="/~cust/cust/linkman_add.jsp" ></forward>
+  	</action>
+  	<action path="/cstActivityAction" type="org.springframework.web.struts.DelegatingActionProxy" parameter="method" scope="request" name="cstActivityForm">
+  		 <forward name="list" path="/~cust/cust/activities.jsp" ></forward>
+  		  <forward name="edit" path="/~cust/cust/activities_edit.jsp" ></forward>
+  		 <forward name="new" path="/~cust/cust/activities_add.jsp" ></forward>
+  	</action>
+  	<!-- 服务 -->
+  	<action path="/cstServiceAction" 
+  	type="org.springframework.web.struts.DelegatingActionProxy" 
+  	parameter="method" 
+  	scope="request"
+   name="cstServiceForm">
+   		<forward name="toCstServiceAdd" path="/~cust/service/add.jsp"></forward>
+  		<forward name="find" path="/~cust/service/arch.jsp"></forward>
+  		<forward name="dispatch" path="/~cust/service/dispatch.jsp"></forward>
+  		<forward name="select" path="/~cust/service/dispatch.jsp"></forward>
+  		<forward name="select1" path="/~cust/service/arch.jsp"></forward>
+  		<forward name="select2" path="/~cust/service/deal.jsp"></forward>
+  		<forward name="select3" path="/~cust/service/feedback.jsp"></forward>
+		<forward name="Dispatch" path="/~cust/service/dispatch.jsp"></forward>
+  		<forward name="selByService" path="/cstServiceAction.do?method=selByService&amp;status=1&amp;uri=Dispatch" redirect="true"></forward>
+  		<forward name="New" path="/cstServiceAction.do?method=selByService&amp;status=2&amp;uri=select2" redirect="true"></forward>
+  		<forward name="deal" path="/~cust/service/deal_detail.jsp"></forward>
+		<forward name="Feedback" path="/~cust/service/feedback.jsp"></forward>
+		<forward name="FeedbackDetail" path="/~cust/service/feedback_detail.jsp"></forward>
+  		<forward name="toSer" path="/~rept/ser.jsp"></forward>
+  		<forward name="Detail" path="/~cust/service/detail.jsp"></forward>
+  	</action>
+  	<!-- 杨泽通的Action -->
+  	<action path="/ordersAction" type="org.springframework.web.struts.DelegatingActionProxy" parameter="method" scope="request" name="ordersForm">
+  		<forward name="nameOrprice" path="/~rept/contr.jsp"></forward>
+  		<forward name="orderslist" path="/~cust/cust/orders.jsp"></forward>
+  	</action>
+  		<action path="/ordersLineAction" type="org.springframework.web.struts.DelegatingActionProxy" parameter="method" scope="request"
+  		name="ordersLineForm"
+  		>
+  		<forward name="list" path="/~cust/cust/orders_detail.jsp"></forward>
+  	</action>
+  	<action path="/basDictAction" name="basDictForm" parameter="method" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+  			<forward name="toDict" path="/~basd/dict.jsp"></forward>
+  			<forward name="toDictAdd" path="/~basd/dict_add.jsp"></forward>
+  			<forward name="Beyong"  path="/~rept/cons.jsp"></forward>
+  			<forward name="toDictEdit" path="/~basd/dict_edit.jsp"></forward>
+  	</action>
+  	<action path="/productAction" name="productForm" parameter="method" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+  			<forward name="toProduct" path="/~basd/product.jsp"></forward>
+  	</action>
+  	<action path="/storageAction" name="storageForm" parameter="method" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+  		<forward name="toStorageList" path="/~basd/storage.jsp"></forward>
+  	</action>
+  	<action path="/cstLostAction" name="cstLostForm" parameter="method" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+  		<forward name="toLost" path="/~rept/lost.jsp"></forward>
+  		<forward name="list" path="/~cust/lost/list.jsp"></forward>
+  		<forward name="relay" path="/~cust/lost/relay.jsp"></forward>
+  		<forward name="confirm" path="/~cust/lost/confirm.jsp"></forward>
+  	</action>
+
+  	
+  </action-mappings>
+  <message-resources parameter="ApplicationResources" />
+ <plug-in className="com.crm.plugin.ConverterPlugIn"></plug-in>
+</struts-config>
+

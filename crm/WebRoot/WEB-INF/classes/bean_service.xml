@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="salPlanService" class="com.crm.biz.SalPlanService" >
+		<property name="salPlanDAO" ref="SalPlanDAO"></property>
+	</bean>
+	<bean id="salChanceService" class="com.crm.biz.SalChanceService" >
+		<property name="salChanceDAO" ref="SalChanceDAO"></property>
+	</bean>
+	<bean id="sysUserService" class="com.crm.biz.SysUserService" >
+		<property name="sysUserDAO" ref="SysUserDAO"></property>
+		<property name="sysRoleDAO" ref="SysRoleDAO"></property>
+	</bean>
+	<bean id="sysRoleService" class="com.crm.biz.SysRoleService" >
+		<property name="sysRoleDAO" ref="SysRoleDAO"></property>
+	</bean>
+	<bean id="cstCustomerService" class="com.crm.biz.CstCustomerService">
+		<property name="cstCustomerDAO" ref="CstCustomerDAO"></property>
+	</bean>
+	<bean id="cstLinkmanService" class="com.crm.biz.CstLinkmanService">
+		<property name="cstLinkmanDAO" ref="CstLinkmanDAO"></property>
+	</bean>
+	<bean id="cstActivityService" class="com.crm.biz.CstActivityService">
+		<property name="cstActivityDAO" ref="CstActivityDAO"></property>
+	</bean>
+	<bean id="cstServiceService" class="com.crm.biz.CstServiceService">
+		<property name="cstServiceDAO" ref="CstServiceDAO"></property>
+		<property name="dictdao" ref="BasDictDAO"></property>
+		<property name="userdao" ref="SysUserDAO"></property>
+	</bean>
+	<bean id="ordersService" class="com.crm.biz.OrdersService">
+		<property name="ordersDAO" ref="OrdersDAO"></property>
+	</bean>
+	<bean id="ordersLineService" class="com.crm.biz.OrdersLineService">
+		<property name="ordersLineDAO" ref="OrdersLineDAO"></property>
+	</bean>
+	<bean id="basDictService" class="com.crm.biz.BasDictService">
+		<property name="basDictDAO" ref="BasDictDAO"></property>
+	</bean>
+	<bean id="productService" class="com.crm.biz.ProductService">
+		<property name="productDAO" ref="ProductDAO"></property>
+	</bean>
+	<bean id="storageService" class="com.crm.biz.StorageService">
+	<property name="storageDAO" ref="StorageDAO" />
+	</bean>
+	<bean id="cstLostService" class="com.crm.biz.CstLostService">
+	<property name="cstLostDAO" ref="CstLostDAO" />
+	</bean>
+	
+</beans>

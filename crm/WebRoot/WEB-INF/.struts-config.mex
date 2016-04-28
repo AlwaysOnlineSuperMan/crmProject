@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/salPlanAction.do" location="350,1050" dimension="362,104" />
+  <StrutsActivity path="/salChanceAction.do" location="950,50" dimension="362,104" />
+  <StrutsActivity path="/sysUserAction.do" location="50,150" dimension="362,104" />
+  <StrutsActivity path="/sysRoleAction.do" location="1250,1650" dimension="362,104" />
+  <StrutsActivity path="/cstCustomerAction.do" location="50,350" dimension="362,104" />
+  <StrutsActivity path="/cstLinkmanAction.do" location="350,1250" dimension="362,104" />
+  <StrutsActivity path="/cstActivityAction.do" location="950,1250" dimension="362,104" />
+  <StrutsActivity path="/cstServiceAction.do" location="50,750" dimension="362,104" />
+  <StrutsActivity path="/ordersAction.do" location="650,850" dimension="362,104" />
+  <StrutsActivity path="/ordersLineAction.do" location="1250,450" dimension="362,104" />
+  <StrutsActivity path="/basDictAction.do" location="1850,850" dimension="362,104" />
+  <StrutsActivity path="/productAction.do" location="1850,1650" dimension="362,104" />
+  <StrutsActivity path="/storageAction.do" location="1550,150" dimension="362,104" />
+  <StrutsActivity path="/cstLostAction.do" location="50,2250" dimension="331,96" />
+  <StrutsActivity path="/~sale/dev_detail.jsp" location="50,1450" dimension="152,53" />
+  <StrutsActivity path="/~sale/dev.jsp" location="50,950" dimension="115,53" />
+  <StrutsActivity path="/~sale/dev_plan.jsp" location="350,1450" dimension="145,53" />
+  <StrutsActivity path="/~sale/dev_execute.jsp" location="1250,250" dimension="164,53" />
+  <StrutsActivity path="/~sale/dispatch.jsp" location="950,650" dimension="143,53" />
+  <StrutsActivity path="/~sale/list.jsp" location="650,50" dimension="110,53" />
+  <StrutsActivity path="/~sale/add.jsp" location="650,450" dimension="117,53" />
+  <StrutsActivity path="/~sale/edit.jsp" location="950,450" dimension="116,53" />
+  <StrutsActivity path="/~right/user/dispatch.jsp" location="1250,1850" dimension="177,53" />
+  <StrutsActivity path="/~right/user/add.jsp" location="1550,850" dimension="151,53" />
+  <StrutsActivity path="/index.jsp" location="650,250" dimension="88,53" />
+  <StrutsActivity path="/~right/user/detail.jsp" location="950,1850" dimension="160,53" />
+  <StrutsActivity path="/login.jsp" location="950,250" dimension="86,53" />
+  <StrutsActivity path="/~right/user/list.jsp" location="1550,1250" dimension="144,53" />
+  <StrutsActivity path="/~right/user/edit.jsp" location="650,1850" dimension="150,53" />
+  <StrutsActivity path="/~right/role/detail.jsp" location="1850,650" dimension="158,53" />
+  <StrutsActivity path="/~right/role/list.jsp" location="350,1650" dimension="142,53" />
+  <StrutsActivity path="/~right/role/dispatchRight.jsp" location="650,2050" dimension="205,53" />
+  <StrutsActivity path="/~right/role/edit.jsp" location="50,2050" dimension="148,53" />
+  <StrutsActivity path="/~cust/cust/edit.jsp" location="50,550" dimension="144,53" />
+  <StrutsActivity path="/~cust/cust/list.jsp" location="350,550" dimension="138,53" />
+  <StrutsActivity path="/~cust/cust/linkman_add.jsp" location="1550,1450" dimension="195,53" />
+  <StrutsActivity path="/~cust/cust/linkman_edit.jsp" location="50,1850" dimension="194,53" />
+  <StrutsActivity path="/~cust/cust/linkman.jsp" location="650,1650" dimension="167,53" />
+  <StrutsActivity path="/~cust/cust/activities.jsp" location="950,1650" dimension="171,53" />
+  <StrutsActivity path="/~cust/service/deal.jsp" location="1250,1450" dimension="164,53" />
+  <StrutsActivity path="/~cust/service/feedback.jsp" location="50,1650" dimension="193,53" />
+  <StrutsActivity path="/~cust/service/arch.jsp" location="950,1050" dimension="164,53" />
+  <StrutsActivity path="/~cust/service/deal_detail.jsp" location="950,2250" dimension="201,53" />
+  <StrutsActivity path="/~cust/service/dispatch.jsp" location="950,1450" dimension="188,53" />
+  <StrutsActivity path="/~rept/ser.jsp" location="1850,2050" dimension="102,51" />
+  <StrutsActivity path="/~cust/service/add.jsp" location="350,1950" dimension="162,53" />
+  <StrutsActivity path="/~cust/cust/orders.jsp" location="1250,850" dimension="161,53" />
+  <StrutsActivity path="/~rept/contr.jsp" location="50,1150" dimension="125,53" />
+  <StrutsActivity path="/~cust/cust/orders_detail.jsp" location="1250,1050" dimension="198,53" />
+  <StrutsActivity path="/~rept/cons.jsp" location="950,2050" dimension="122,53" />
+  <StrutsActivity path="/~basd/dict_edit.jsp" location="1550,2050" dimension="148,53" />
+  <StrutsActivity path="/~basd/dict_add.jsp" location="1850,1450" dimension="149,53" />
+  <StrutsActivity path="/~basd/dict.jsp" location="1850,1250" dimension="121,53" />
+  <StrutsActivity path="/~basd/product.jsp" location="1850,1850" dimension="146,53" />
+  <StrutsActivity path="/~basd/storage.jsp" location="1250,2050" dimension="145,53" />
+  <StrutsActivity path="/~rept/lost.jsp" location="650,2250" dimension="106,51" />
+  <StrutsActivity path="" location="650,650" dimension="32,53" />
+  <StrutsActivity path="/lon.jsp" location="1250,650" dimension="75,53" />
+  <StrutsActivity path="/.jsp" location="650,1450" dimension="57,53" />
+  <StrutsActivity path="~right/user/add.jsp" location="1550,650" dimension="146,53" />
+  <StrutsActivity path="//~right/user/list.jsp" location="1550,1050" dimension="149,53" />
+  <StrutsActivity path="/crm/WebRoot/~right/role/edit.jsp" location="1550,1850" dimension="235,53" />
+  <StrutsActivity path="~basd/dict.jsp" location="1850,1050" dimension="116,53" />
+  <StrutsTransition id="/sysRoleAction.do,toDetail,/~right/role/detail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1612,1702" />
+      <AbsolutePoint location="1760,1702" />
+      <AbsolutePoint location="1760,676" />
+      <AbsolutePoint location="1850,676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysUserAction.do,toList,/~right/user/list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="231,254" />
+      <AbsolutePoint location="231,318" />
+      <AbsolutePoint location="1830,318" />
+      <AbsolutePoint location="1830,1276" />
+      <AbsolutePoint location="1694,1276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysUserAction.do,toDispatch,/~right/user/dispatch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,202" />
+      <AbsolutePoint location="-25,202" />
+      <AbsolutePoint location="-25,1799" />
+      <AbsolutePoint location="1338,1799" />
+      <AbsolutePoint location="1338,1850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstCustomerAction.do,all,/~cust/cust/list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="397,454" />
+      <AbsolutePoint location="397,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productAction.do,toProduct,/~basd/product.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1923,1754" />
+      <AbsolutePoint location="1923,1850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysUserAction.do,toLogin,/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="412,202" />
+      <AbsolutePoint location="993,202" />
+      <AbsolutePoint location="993,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstServiceAction.do,select1,/~cust/service/arch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="412,795" />
+      <AbsolutePoint location="1032,795" />
+      <AbsolutePoint location="1032,1050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salPlanAction.do,dev_detail,/~sale/dev_detail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,1102" />
+      <AbsolutePoint location="187,1102" />
+      <AbsolutePoint location="187,1450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstServiceAction.do,dispatch,/~cust/service/dispatch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="187,854" />
+      <AbsolutePoint location="187,929" />
+      <AbsolutePoint location="259,929" />
+      <AbsolutePoint location="259,1429" />
+      <AbsolutePoint location="1044,1429" />
+      <AbsolutePoint location="1044,1450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salChanceAction.do,add,/~sale/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,118" />
+      <AbsolutePoint location="872,118" />
+      <AbsolutePoint location="872,476" />
+      <AbsolutePoint location="767,476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salChanceAction.do,dev,/~sale/dev.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1131,154" />
+      <AbsolutePoint location="1131,976" />
+      <AbsolutePoint location="165,976" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstServiceAction.do,select3,/~cust/service/feedback.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="319,854" />
+      <AbsolutePoint location="319,1676" />
+      <AbsolutePoint location="243,1676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstServiceAction.do,deal,/~cust/service/deal_detail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="412,825" />
+      <AbsolutePoint location="2287,825" />
+      <AbsolutePoint location="2287,2276" />
+      <AbsolutePoint location="1151,2276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstLinkmanAction.do,edit,/~cust/cust/linkman_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="531,1354" />
+      <AbsolutePoint location="531,1876" />
+      <AbsolutePoint location="244,1876" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysRoleAction.do,toDispatchRight,/~right/role/dispatchRight.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1472,1754" />
+      <AbsolutePoint location="1472,2178" />
+      <AbsolutePoint location="741,2178" />
+      <AbsolutePoint location="741,2103" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salChanceAction.do,list,/~sale/list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,76" />
+      <AbsolutePoint location="760,76" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstServiceAction.do,New,/cstServiceAction.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="231,750" />
+      <AbsolutePoint location="231,671" />
+      <AbsolutePoint location="433,671" />
+      <AbsolutePoint location="433,765" />
+      <AbsolutePoint location="412,765" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salPlanAction.do,dev,/~sale/dev.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,1072" />
+      <AbsolutePoint location="107,1072" />
+      <AbsolutePoint location="107,1003" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysUserAction.do,index,/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="412,232" />
+      <AbsolutePoint location="694,232" />
+      <AbsolutePoint location="694,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstLostAction.do,toLost,/~rept/lost.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="381,2275" />
+      <AbsolutePoint location="650,2275" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysUserAction.do,toUserEdit,/~right/user/edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,172" />
+      <AbsolutePoint location="-85,172" />
+      <AbsolutePoint location="-85,1829" />
+      <AbsolutePoint location="725,1829" />
+      <AbsolutePoint location="725,1850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstServiceAction.do,Dispatch,/~cust/service/dispatch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,802" />
+      <AbsolutePoint location="-55,802" />
+      <AbsolutePoint location="-55,1518" />
+      <AbsolutePoint location="1044,1518" />
+      <AbsolutePoint location="1044,1503" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basDictAction.do,toDictEdit,/~basd/dict_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2061,954" />
+      <AbsolutePoint location="2061,1318" />
+      <AbsolutePoint location="1830,1318" />
+      <AbsolutePoint location="1830,2076" />
+      <AbsolutePoint location="1698,2076" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstServiceAction.do,selByService,/cstServiceAction.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="289,854" />
+      <AbsolutePoint location="289,899" />
+      <AbsolutePoint location="457,899" />
+      <AbsolutePoint location="457,847" />
+      <AbsolutePoint location="412,847" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysUserAction.do,toUserAdd,/~right/user/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="412,172" />
+      <AbsolutePoint location="1221,172" />
+      <AbsolutePoint location="1221,795" />
+      <AbsolutePoint location="1625,795" />
+      <AbsolutePoint location="1625,850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salPlanAction.do,dev_plan,/~sale/dev_plan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,1132" />
+      <AbsolutePoint location="289,1132" />
+      <AbsolutePoint location="289,1476" />
+      <AbsolutePoint location="350,1476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstServiceAction.do,select,/~cust/service/dispatch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="190,854" />
+      <AbsolutePoint location="190,1018" />
+      <AbsolutePoint location="793,1018" />
+      <AbsolutePoint location="793,1476" />
+      <AbsolutePoint location="950,1476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstCustomerAction.do,edit,/~cust/cust/edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="122,454" />
+      <AbsolutePoint location="122,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basDictAction.do,Beyong,/~rept/cons.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2091,954" />
+      <AbsolutePoint location="2091,1608" />
+      <AbsolutePoint location="1226,1608" />
+      <AbsolutePoint location="1226,2076" />
+      <AbsolutePoint location="1072,2076" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstLinkmanAction.do,list,/~cust/cust/linkman.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="712,1302" />
+      <AbsolutePoint location="733,1302" />
+      <AbsolutePoint location="733,1650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstLinkmanAction.do,new,/~cust/cust/linkman_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="561,1354" />
+      <AbsolutePoint location="561,1578" />
+      <AbsolutePoint location="1647,1578" />
+      <AbsolutePoint location="1647,1503" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstServiceAction.do,select2,/~cust/service/deal.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="228,854" />
+      <AbsolutePoint location="228,1399" />
+      <AbsolutePoint location="1332,1399" />
+      <AbsolutePoint location="1332,1450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstActivityAction.do,list,/~cust/cust/activities.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1166,1354" />
+      <AbsolutePoint location="1166,1676" />
+      <AbsolutePoint location="1121,1676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstCustomerAction.do,toDispatch,/~sale/dispatch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="201,454" />
+      <AbsolutePoint location="201,518" />
+      <AbsolutePoint location="1021,518" />
+      <AbsolutePoint location="1021,650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysUserAction.do,toDetail,/~right/user/detail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,232" />
+      <AbsolutePoint location="5,232" />
+      <AbsolutePoint location="5,1718" />
+      <AbsolutePoint location="1030,1718" />
+      <AbsolutePoint location="1030,1850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ordersAction.do,nameOrprice,/~rept/contr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="832,954" />
+      <AbsolutePoint location="832,1176" />
+      <AbsolutePoint location="175,1176" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ordersAction.do,orderslist,/~cust/cust/orders.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1012,876" />
+      <AbsolutePoint location="1250,876" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ordersLineAction.do,list,/~cust/cust/orders_detail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1431,554" />
+      <AbsolutePoint location="1431,1050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstServiceAction.do,find,/~cust/service/arch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="201,750" />
+      <AbsolutePoint location="201,618" />
+      <AbsolutePoint location="1191,618" />
+      <AbsolutePoint location="1191,1076" />
+      <AbsolutePoint location="1114,1076" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salPlanAction.do,dev_execute,/~sale/dev_execute.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="531,1050" />
+      <AbsolutePoint location="531,395" />
+      <AbsolutePoint location="1332,395" />
+      <AbsolutePoint location="1332,303" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basDictAction.do,toDictAdd,/~basd/dict_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1984,954" />
+      <AbsolutePoint location="1984,1450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salChanceAction.do,toDispatch,/~sale/dispatch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1078,154" />
+      <AbsolutePoint location="1078,650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salChanceAction.do,dev_detail,/~sale/dev_detail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1161,154" />
+      <AbsolutePoint location="1161,1218" />
+      <AbsolutePoint location="190,1218" />
+      <AbsolutePoint location="190,1450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salChanceAction.do,toEdit,/~sale/edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1051,154" />
+      <AbsolutePoint location="1051,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/storageAction.do,toStorageList,/~basd/storage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1912,202" />
+      <AbsolutePoint location="2227,202" />
+      <AbsolutePoint location="2227,2018" />
+      <AbsolutePoint location="1322,2018" />
+      <AbsolutePoint location="1322,2050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysRoleAction.do,toRoleList,/~right/role/list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,1748" />
+      <AbsolutePoint location="421,1748" />
+      <AbsolutePoint location="421,1703" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basDictAction.do,toDict,/~basd/dict.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2031,954" />
+      <AbsolutePoint location="2031,1276" />
+      <AbsolutePoint location="1971,1276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstServiceAction.do,toSer,/~rept/ser.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,832" />
+      <AbsolutePoint location="35,832" />
+      <AbsolutePoint location="35,2421" />
+      <AbsolutePoint location="1901,2421" />
+      <AbsolutePoint location="1901,2101" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cstServiceAction.do,toCstServiceAdd,/~cust/service/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="261,750" />
+      <AbsolutePoint location="261,718" />
+      <AbsolutePoint location="1800,718" />
+      <AbsolutePoint location="1800,1976" />
+      <AbsolutePoint location="512,1976" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysRoleAction.do,toRoleEdit,/~right/role/edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1442,1754" />
+      <AbsolutePoint location="1442,1918" />
+      <AbsolutePoint location="124,1918" />
+      <AbsolutePoint location="124,2050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

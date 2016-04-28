@@ -1,0 +1,71 @@
+
+						客户管理模块
+		JSP页面在~cust文件夹中 
+CstActivityAction：
+	针对客户活动操作的action
+		Entity:CstActivity(客户交往记录实体类)
+		Form：CstActivityForm(客户交往记录Form)
+		Dao:CstActivityDAO(客户交往记录dao)
+		Service：CstActivityService(客户交往记录Service)
+		JSP页面：activities.jsp(客户交往界面 点击编辑按钮会进入修改客户交往界面（activities_edit.jsp），对客户交往记录进行修改
+											点击新建按钮会进入新建客户交往界面（activities_add.jsp），对新的客户建立交往记录
+											点击删除按钮会将与该客户的交往记录删除 )
+				
+				activities_add.jsp(新建客户交往界面  对新的客户建立交往记录)
+				
+				activities_edit.jsp(修改客户交往界面 对当前客户交往记录进行修改 )
+CstCustomerAction：
+	针对客户信息操作的action
+	Entity：CstCustomer（客户信息实体类）
+	Form：CstCustomerForm（客户信息Form）
+	Dao:CstCustomerDAO(客户信息dao)
+	Service：CstCustomerService(客户信息Service)
+	JSP页面：edit.jsp(客户信息编辑界面)
+			
+			list.jsp(客户信息初始化界面  在主菜单点击客户信息时出面的界面  客户经理能编辑状态为正常的客户信息    
+						界面中操作栏下点击编辑会进入   edit.jsp 客户信息编辑页面
+									点击联系人会进入  linkman.jsp 联系人界面
+									点击交往记录会进入 activities.jsp 客户交往界面
+									点击历史订单会进入 orders.jsp 历史订单界面
+									状态为流失的客户会有删除按钮   点击删除按钮后会把客户状态变为删除)
+	
+CstLinkmanAction：
+	针对客户联系人操作的action
+	Entity：CstLinkman（联系人实体类）
+	Form：CstLinkmanForm（联系人Form）
+	Dao:CstLinkmanDAO(联系人dao)
+	Service：CstLinkmanService(联系人Service)
+	JSP页面：linkman.jsp(联系人界面 对与当前客户有关的联系人进行显示)
+			
+			linkman_add.jsp(添加联系人界面   为当前客户添加新的联系人)
+			
+			linkman_edit.jsp(修改联系人界面  对联系人的信息进行修改)
+CstLostAction：
+	针对客户流失操作的action
+	Entity：CstLost（客户流失实体类）
+	Form：CstLostForm（客户流失Form）
+	Dao:CstLostmanDAO(客户流失dao)
+	Service：CstLostService(客户流失Service)
+	JSP页面:list.jsp(对当前用户的客户状态为警告和暂缓流失的客户信息进行显示   状态为警告的客户有暂缓流失和确认流失两个按钮
+					状态为暂缓流失的客户只有确认流失一个按钮。 点击暂缓流失按钮  进入relay.jsp界面  
+															点击确认流失按钮 进入confirm.jsp界面)
+			confirm.jsp(确认流失界面 填写流失原因，点击保存后 客户状态变为流失)
+			
+			relay.jsp(暂缓流失界面 填写补救措施，点击保存后 客户状态变为暂缓流失)
+		
+OrdersAction:
+	针对历史订单操作的action
+	Entity：Orders（历史订单实体类）
+	Form：OrdersForm（历史订单form）
+	Dao:OrdersmanDAO(历史订单dao)
+	Service：OrdersService(历史订单Service)
+	JSP页面：orders.jsp(显示当前客户的历史订单)
+
+OrdersLineAction：
+	针对历史订单详情操作的action
+	Entity：OrdersLine（历史订单详情实体类）
+	Form：OrdersLineForm(历史订单详情Form)
+	Dao:OrdersLinemanDAO(历史订单详情dao)
+	Service：OrdersLineService(历史订单详情Service)
+	JSP页面：orders_detail.jsp(对该订单的详情进行显示)
+	

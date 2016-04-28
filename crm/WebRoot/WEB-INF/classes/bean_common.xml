@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+	">
+
+	<!--  Hibernate Info -->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.microsoft.sqlserver.jdbc.SQLServerDriver">
+		</property>
+		<property name="url"
+			value="jdbc:sqlserver://localhost:1433;databasename=jb_crm_team0">
+		</property>
+		<property name="username" value="sa"></property>
+		<property name="password" value="123"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.SQLServerDialect
+				</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<!-- Println SQL -->
+				<prop key="hibernate.show_sql">true</prop>
+				<!-- 数据库编码方式 -->
+				<prop key="connection.characterEncoding">utf8</prop>
+				<!-- 开启二级缓存 -->
+				<prop key="hibernate.cache.use_second_level_cache" >true</prop>
+				<!--  选择二级缓存提供商 类 -->
+				<prop key="hibernate.cache.provider_class" >org.hibernate.cache.EhCacheProvider</prop>
+				<!--   二级缓存配置文件所在路径 -->
+				<prop key="hibernate.cache.provider_configuration_file_resource_path" >com/crm/util/ehcache.xml</prop>
+				<!--   开启查询缓存 -->
+				<prop key="hibernate.cache.use_query_cache" >true</prop>
+	</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/crm/entity/SysRoleRight.hbm.xml</value>
+				<value>com/crm/entity/CstLinkman.hbm.xml</value>
+				<value>com/crm/entity/Product.hbm.xml</value>
+				<value>com/crm/entity/Storage.hbm.xml</value>
+				<value>com/crm/entity/SysUser.hbm.xml</value>
+				<value>com/crm/entity/BasDict.hbm.xml</value>
+				<value>com/crm/entity/SalChance.hbm.xml</value>
+				<value>com/crm/entity/CstService.hbm.xml</value>
+				<value>com/crm/entity/Orders.hbm.xml</value>
+				<value>com/crm/entity/SysRight.hbm.xml</value>
+				<value>com/crm/entity/CstCustomer.hbm.xml</value>
+				<value>com/crm/entity/CstLost.hbm.xml</value>
+				<value>com/crm/entity/SysRole.hbm.xml</value>
+				<value>com/crm/entity/OrdersLine.hbm.xml</value>
+				<value>com/crm/entity/SalPlan.hbm.xml</value>
+				<value>com/crm/entity/CstActivity.hbm.xml</value></list>
+		</property></bean>
+	
+	
+	
+	
+	<!-- 1.声明 hibernate的事物管理器，即是一个切面 -->
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- 2.声明事物管理器怎么干活，即这个切面的advice -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<!-- 以add开头的方法，开启事物 -->
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="upd*" propagation="REQUIRED" />
+			<tx:method name="del*" propagation="REQUIRED" />
+			<!-- 以get开头的方法，对数据库只读不写 -->
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="*" read-only="false" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 找切入点 -->
+	<aop:config>
+		<aop:pointcut id="mypointcut"
+			expression="execution(* com.crm.biz.*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="mypointcut" />
+	</aop:config>
+	
+	
+	
+	
+	
+	</beans>
