@@ -19,19 +19,8 @@ pipeline {
     }
 
     stage('sadff') {
-      parallel {
-        stage('sadff') {
-          steps {
-            echo 'sdf'
-          }
-        }
-
-        stage('') {
-          steps {
-            echo 'zdfSADf'
-          }
-        }
-
+      steps {
+        echo 'sdf'
       }
     }
 
